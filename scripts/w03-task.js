@@ -83,6 +83,5 @@ document.querySelector('#odds').innerHTML = numbersArray.filter(n => n%2)
 document.querySelector('#evens').innerHTML = odds = numbersArray.filter(number => number % 2 === 0);
 document.querySelector('#sumOfArray').innerHTML = numbersArray.reduce((sum, number) => sum + number);
 document.querySelector('#multiplied').innerHTML = numbersArray.map(number => number * 2);
-document.querySelector('#sumOfMultiplied').innerHTML = numbersArray.map();
-/* Output Odds Only Array */
+document.querySelector('#sumOfMultiplied').innerHTML  = numbersArray.map(number => number * 2).reduce((sum, number) => sum + number)
 console.log(odds)
