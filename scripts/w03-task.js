@@ -16,7 +16,7 @@ function addNumbers(){
      console.log('SUM', sum)
      
 }         
-document.querySelector('#addNumbers').addEventListener('click', addNumbers)
+document.querySelector('#addNumbers').addEventListener('click', addNumbers);
 
 /* Function Expression - Subtract Numbers */
 function subtract(subtnumber1, subtnumber2) {
@@ -33,22 +33,22 @@ function subtractNumbers(){
      console.log('DIFFERENCE', subt)
      
 }         
-document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers)
+document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers);
 
 
 /* Arrow Function - Multiply Numbers */
-   (multnumber1, multnumber2) =>{
+   function multiply(multnumber1, multnumber2){
        multnumber1 * multnumber2
     return mult}
 
- let multiplyNumbers=()=>{
+ function multiplyNumbers(){
    multiplyNumber1= Number(document.querySelector('#factor1').value)
    multiplyNumber2= Number(document.querySelector('#factor2').value)
     mult = multiply(multiplyNumber1,multiplyNumber2)
  document.querySelector('#product').value = mult
      console.log('FIRST NUMBER', multiplyNumber1)
      console.log('SECOND NUMBER', multiplyNumber2)
-     console.log('DIFFERENCE', mult)
+     console.log('PRODUCT', mult)
      
 }         
 document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers)
@@ -66,8 +66,7 @@ function divideNumbers(){
  document.querySelector('#quotient').value = div
      console.log('FIRST NUMBER', divideNumber1)
      console.log('SECOND NUMBER', divideNumber2)
-     console.log('DIFFERENCE', div)
-     
+     console.log('QUOTIENT', div)
 }         
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers)
 
@@ -87,10 +86,3 @@ let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 
 /* Output Odds Only Array */
 
-/* Output Evens Only Array */
-
-/* Output Sum of Org. Array */
-
-/* Output Multiplied by 2 Array */
-
-/* Output Sum of Multiplied by 2 Array */
