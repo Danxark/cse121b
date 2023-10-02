@@ -37,9 +37,39 @@ document.querySelector('#subtractNumbers').addEventListener('click', subtractNum
 
 
 /* Arrow Function - Multiply Numbers */
+   (multnumber1, multnumber2) =>{
+       multnumber1 * multnumber2
+    return mult}
+
+ let multiplyNumbers=()=>{
+   multiplyNumber1= Number(document.querySelector('#factor1').value)
+   multiplyNumber2= Number(document.querySelector('#factor2').value)
+    mult = multiply(multiplyNumber1,multiplyNumber2)
+ document.querySelector('#product').value = mult
+     console.log('FIRST NUMBER', multiplyNumber1)
+     console.log('SECOND NUMBER', multiplyNumber2)
+     console.log('DIFFERENCE', mult)
+     
+}         
+document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers)
 
 
 /* Open Function Use - Divide Numbers */
+function divide(divnumber1, divnumber2) {
+    const  div= divnumber1 - divnumber2
+    return div
+}
+function divideNumbers(){
+  const divideNumber1= Number(document.querySelector('#dividend').value)
+  const divideNumber2= Number(document.querySelector('#divisor').value)
+   const div = divide(divideNumber1,divideNumber2)
+ document.querySelector('#quotient').value = div
+     console.log('FIRST NUMBER', divideNumber1)
+     console.log('SECOND NUMBER', divideNumber2)
+     console.log('DIFFERENCE', div)
+     
+}         
+document.querySelector('#divideNumbers').addEventListener('click', divideNumbers)
 
 
 /* Decision Structure */
