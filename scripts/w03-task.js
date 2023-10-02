@@ -73,9 +73,16 @@ document.querySelector('#divideNumbers').addEventListener('click', divideNumbers
 
 
 /* Decision Structure */
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+document.querySelector('#year')
+
+
+
 
 
 /* ARRAY METHODS - Functional Programming */
+let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 /* Output Source Array */
 
 /* Output Odds Only Array */
