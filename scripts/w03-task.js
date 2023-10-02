@@ -38,7 +38,7 @@ document.querySelector('#subtractNumbers').addEventListener('click', subtractNum
 
 /* Arrow Function - Multiply Numbers */
    function multiply(multnumber1, multnumber2){
-       multnumber1 * multnumber2
+      const mult = multnumber1 * multnumber2
     return mult}
 
  function multiplyNumbers(){
@@ -82,6 +82,7 @@ document.querySelector('#year')
 
 /* ARRAY METHODS - Functional Programming */
 let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+Document.querySelector('#array')
 /* Output Source Array */
 
 /* Output Odds Only Array */
