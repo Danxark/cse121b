@@ -74,7 +74,7 @@ document.querySelector('#divideNumbers').addEventListener('click', divideNumbers
 /* Decision Structure */
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
-document.querySelector('#year')
+document.querySelector('#year').innerHTML = currentYear
 
 
 
@@ -82,10 +82,11 @@ document.querySelector('#year')
 
 /* ARRAY METHODS - Functional Programming */
 let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-Document.querySelector('#array')
+Document.querySelector('#array').innerHTML = numbersArray
 /* Output Source Array */
 document.querySelector('#evens').innerHTML = numbersArray.filter(number => number % 2 === 0);
-numbersArray.reduce((sum, number) => sum + number)
-numbersArray.map(number => number * 2)
+document.querySelector('#sumOfArray').innerHTML = numbersArray.reduce((sum, number) => sum + number)
+document.querySelector('#multiplied').innerHTML = numbersArray.map(number => number * 2)
+document.querySelector('sumOfMultiplied').innerHTML = numbersArray.map()
 /* Output Odds Only Array */
 
