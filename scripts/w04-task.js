@@ -36,17 +36,17 @@ const photo = document.querySelector('#photo');
 photo.setAttribute('src',myProfile.photo);
 photo.setAttribute('alt',myProfile.name);
 myProfile.favoriteFoods.forEach(food => {
-    const li = document.createElement('li');
-    li.textContent = food;
-    document.querySelector('#favortie-foods').appendChild(li);
+    let li = document.createElement('li')
+    li.textContent = food
+    document.querySelector('#favortie-foods').appendChild(li)
 })
 myProfile.hobbies.forEach(hobbie => {
-    const ul = document.createElement('ul');
+    let ul = document.createElement('ul');
     ul.textContent = hobbie;
     document.querySelector('#hobbies').appendChild(ul);
 })
 myProfile.placesLived.forEach(length => {
-    const dd = document.createElement('dd');
+    let dd = document.createElement('dd');
     ul.textContent = length;
     document.querySelector('#places-lived').appendChild(dd);
 })
