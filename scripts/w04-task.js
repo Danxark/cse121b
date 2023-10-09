@@ -2,7 +2,7 @@
 
 /* Profile Object  */
 
-let myProfile = {
+const myProfile = {
     name: 'Danny Alonzo',
     photo: 'images/danfoto.png',
 
@@ -17,8 +17,9 @@ let myProfile = {
     'Play Guitar',
     'Play videogames',
     'play Voleyball',
-    'Play Soccer'
-]
+    'Play Soccer',
+],
+    placesLived : []
 };
 /* Populate Profile Object with placesLive objects */
 myProfile.placesLived.push(
@@ -31,21 +32,21 @@ myProfile.placesLived.push(
 
 /* DOM Manipulation - Output */
 document.querySelector('#name').textContent= myProfile.name;
-let photo = document.querySelector('#photo');
+const photo = document.querySelector('#photo');
 photo.setAttribute('src',myProfile.photo);
 photo.setAttribute('alt',myProfile.name);
 myProfile.favoriteFoods.forEach(food => {
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.textContent = food;
     document.querySelector('#favortie-foods').appendChild(li);
 })
 myProfile.hobbies.forEach(hobbie => {
-    let ul = document.createElement('ul');
+    const ul = document.createElement('ul');
     ul.textContent = hobbie;
     document.querySelector('#hobbies').appendChild(ul);
 })
 myProfile.placesLived.forEach(length => {
-    let dd = document.createElement('dd');
+    const dd = document.createElement('dd');
     ul.textContent = length;
     document.querySelector('#places-lived').appendChild(dd);
 })
@@ -64,5 +65,3 @@ myProfile.placesLived.forEach(length => {
 
 
 /* Places Lived DataList */
-
-
