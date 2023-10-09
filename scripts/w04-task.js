@@ -8,7 +8,7 @@ const myProfile = {
 
     favoriteFoods: [
     'Ceviche',
-    'encebollado',
+    'Encebollado',
     'Arroz con camaron',
     'French fries',
     'Apple Pie'
@@ -16,7 +16,7 @@ const myProfile = {
      hobbies: [
     'Play Guitar',
     'Play videogames',
-    'play Voleyball',
+    'Play Voleyball',
     'Play Soccer',
 ],
     placesLived : []
@@ -25,7 +25,14 @@ const myProfile = {
 myProfile.placesLived.push(
     {
         place: 'Portoviejo, Ec',
-        length: '25 years'
+
+        length: ' 23 years ',
+    },
+
+    {
+        place : 'Bogota, Col',
+
+        length : ' 2 years ',
     }
 )
 
@@ -36,19 +43,27 @@ const photo = document.querySelector('#photo');
 photo.setAttribute('src',myProfile.photo);
 photo.setAttribute('alt',myProfile.name);
 myProfile.favoriteFoods.forEach(food => {
-    let li = document.createElement('li')
-    li.textContent = food
-    document.querySelector('#favortie-foods').appendChild(li)
+    let li = document.createElement('li');
+    li.textContent = food;
+    document.querySelector('#favorite-foods').appendChild(li)
 })
 myProfile.hobbies.forEach(hobbie => {
-    let ul = document.createElement('ul');
-    ul.textContent = hobbie;
-    document.querySelector('#hobbies').appendChild(ul);
+    let li = document.createElement('li');
+    li.textContent = hobbie;
+    document.querySelector('#hobbies').appendChild(li);
 })
-myProfile.placesLived.forEach(length => {
-    let dd = document.createElement('dd');
-    ul.textContent = length;
-    document.querySelector('#places-lived').appendChild(dd);
+ myProfile.placesLived.forEach(placeLived => {
+    let dt = document.createElement('place');
+    dt.textContent = placeLived.place;
+    let dd = document.createElement('length');
+    dd.textContent = placeLived.length;
+    let dl = document.createElement('dl');
+    dl.textContent = placeLived.length
+    document.querySelector('#places-lived').appendChild(dt);
+    document.querySelector('#places-lived').appendChild(dl);
+    
+    
+    
 })
 
 
