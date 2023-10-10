@@ -4,8 +4,7 @@
 
 
 /* async displayTemples Function */
-
-
+const displayTemples = {getTemples} => 
 
 
 /* async getTemples Function using fetch()*/
