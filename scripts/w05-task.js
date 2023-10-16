@@ -1,10 +1,14 @@
 /* W05: Programming Tasks */
 
 /* Declare and initialize global variables */
+const templeElement = []
+const templelist = []
 
 
 /* async displayTemples Function */
-const displayTemples = {getTemples} => 
+const displayTemples = {getTemples} => {
+    
+}
 
 
 /* async getTemples Function using fetch()*/
