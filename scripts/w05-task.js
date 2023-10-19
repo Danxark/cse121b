@@ -1,65 +1,63 @@
 /* W05: Programming Tasks */
 
 /* Declare and initialize global variables */
-const templeList = []
-const templeElement = []
-function outputTemples(templeList){
-    console.log('TEMPLE OUTPUT PARAM', templeList )
-    const templeDiv = document.getElementById('temples').innerHTML
-    templeList.forEach(temple => {
-        const templeNameh3 = document.createElement('h3')
-        console.log('temple',temple);
-        templeNameh3.innerHTML = temple.templeName
-        templeDiv.append(templeNameh3)
-    });
 
-}
-
-
+const templesElement = document.querySelector("#temples");
+let templeList = [];
 /* async displayTemples Function */
+const displayTemples = (temples) => {
+    templesElement.innerHTML = "";
+    temples.forEach((temple) => {
 
-async function getTempledata(){
-    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json")
-    console.log('TEMPLE DATA:', templeList);
-    templeList = response.json()
-}
-getTempledata()
-function reset() {
-    document.querySelector('#temples').textContent = ''
-}
+        const article = document.createElement("article");
+        templesElement.appendChild(article);
+        const h3 = document.createElement("h3");
+        h3.textContent = temple.templeName;
+        const img = document.createElement("img");
+        img.src = temple.imageUrl;
+        img.alt = temple.location;
+        article.appendChild(h3);
+        article.appendChild(img);
+    });
+};
+
 /* async getTemples Function using fetch()*/
-
+const getTemples = async () => {
+    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
+    data = await response.json();
+    templeList.push(...data);
+    displayTemples(templeList);
+};
 
 /* reset Function */
-function sortTemples(){
-    reset()
-    const sortedTemple = templeList.sort(compare)
-    console.log('SORTED LIST', sortedTemples);
-    outputTemples(sortedTemples)
-}
-function compare(temple1, temple2) {
-    console.log('TEMPLES', temple1);
-    if(temple1.templeName > temple2.templeName){
-        return 1
-    }
-    if (temple1.templeName < temple2.templeName){
-        return -1
-    }
-    else{
-        return 0
-    }
-
-
-
-}
-document.querySelector('#sortBy').addEventListener
-('click', sortTemples)
-
+const reset = () => {
+    templesElement.innerHTML = "";
+};
 
 /* sortBy Function */
 
-
-
-
+const sortBy = (temples) => {
+    reset();
+    const filter = document.getElementById("sortBy").value;
+    switch (filter) {
+        case "utah":
+            displayTemples(temples.filter(temple => temple.location.includes("Utah")));
+            break;
+        case "notutah":
+            displayTemples(temples.filter(temple => !temple.location.includes("Utah")));
+            break;
+        case "older":
+            displayTemples(temples.filter(temple => temple.dedicatedDate > new Date(1950, 0, 1)));
+            break;
+        case "all":
+            displayTemples(temples);
+            break;
+    }
+};
 
 /* Event Listener */
+document.getElementById("sortBy").addEventListener("change", () => {
+    sortBy(templeList);
+});
+
+getTemples();
